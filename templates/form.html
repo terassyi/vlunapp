@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vlun app</title>
+</head>
+<body>
+    <h1>vlun app</h1>
+    <h2>form page</h2>
+    <div>
+        <form action="/form" method="POST">
+            <div>
+                <label for="cmd">cmd:</label>
+                <input type="text" id="cmd" name="cmd" />
+            </div>
+            <div>
+                <input type="submit" value="submit" />
+            </div>
+        </form>
+    </div>
+    <div>
+        {{ res }}
+    </div>
+</body>
+</html>
