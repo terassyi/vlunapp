@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import subprocess
+import os
 
 app = Flask(__name__)
 
@@ -14,9 +15,11 @@ def vlun_form():
     if request.method == "GET":
         return render_template('form.html')
     elif request.method == "POST":
-        cmd = request.form.get("cmd").split(' ')
-        res = subprocess.run(cmd, stdout=subprocess.PIPE)
-        return render_template('form.html', res=res.stdout)
+        cmd = request.form.get("cmd")
+        print(cmd)
+        # res = subprocess.run(cmd, stdout=subprocess.PIPE)
+        res = os.system(cmd)
+        return render_template('form.html', res=res)
 
 
 if __name__ == '__main__':
